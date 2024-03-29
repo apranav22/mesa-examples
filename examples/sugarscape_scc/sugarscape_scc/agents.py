@@ -37,7 +37,7 @@ class SsAgent3(SsAgent):
             return False
         return self.sugar < self.fertile
 
-    def sex(self):
+      def sex(self):
         potential_mates = [
             i
             for i in self.model.grid.get_neighbors(
@@ -88,6 +88,7 @@ class SsAgent3(SsAgent):
         for i in self.children:
             i.sugar += self.sugar / len(self.children)
 
+
     def step(self):
         self.move()
         self.eat()
@@ -98,4 +99,6 @@ class SsAgent3(SsAgent):
             self.inheritance()
             self.model.grid.remove_agent(self)
             self.model.schedule.remove(self)  # death conditions
-        self.age = self.age + 1
+        self.age += 1
+
+

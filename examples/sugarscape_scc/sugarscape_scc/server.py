@@ -3,6 +3,7 @@ from mesa_models.sugarscape_cg.agents import Sugar
 
 # TODO implement age graph as well
 from .agents import SsAgent3 as SsAgent
+
 from .model import SugarscapeScc
 
 color_dic = {4: "#005C00", 3: "#008300", 2: "#00AA00", 1: "#00F800"}
@@ -34,7 +35,8 @@ chart_element = mesa.visualization.ChartModule(
     [{"Label": "SsAgent", "Color": "#AA0000"}], data_collector_name="datacollector"
 )
 bar_graph = mesa.visualization.BarChartModule(
-    [{"Label": "age", "Color": "#AAAAAA"}], data_collector_name="datacollector2"
+
+    [{"Label": "age", "Color": "#AAAAAA"}], data_collector_name="datacollector"
 )
 server = mesa.visualization.ModularServer(
     SugarscapeScc, [canvas_element, chart_element, bar_graph], "Sugarscape 3 SCC"
